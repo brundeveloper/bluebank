@@ -12,8 +12,6 @@ var router = function(port){
 	//Metodos permitidos para roteamento
 	var methods = ["GET", "POST", "OPTIONS"];
 
-	var interceptors = [];
-
 	//Passa por cada método
 	methods.forEach(function(method){
 		//Cria um objeto de rotas com o método em questao

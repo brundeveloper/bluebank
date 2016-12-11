@@ -1,0 +1,28 @@
+body {
+	margin: auto;
+	width: 50%;
+}
+
+.classTitle {
+	margin: 10px 0px;
+	text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.classView {
+	width: 100%;
+	padding: 10%;
+    background-color: #ececec;
+    border-radius: 10px;
+}
+
+.classMargin {
+	margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.classModal {
+    margin: auto;
+    width: 60%;
+}

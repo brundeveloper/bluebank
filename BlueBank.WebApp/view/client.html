@@ -1,0 +1,21 @@
+<div class="row classMargin">
+	<h3>
+		Olá, <strong>{{client.nome}}</strong>
+	</h3>
+</div>
+<div class="row classMargin">
+	<dl class="dl-horizontal">
+		<dt>Agencia</dt>
+		<dd>{{client.agencia}}</dd>
+		<dt>Conta</dt>
+		<dd>{{client.numero}}</dd>
+		<dt>Saldo</dt>
+		<dd>{{client.saldo | currency}}</dd>
+	</dl>
+</div>
+<div class="row classMargin">
+	<a href="#/transfer" class="btn btn-info">Transferência</a>
+</div>
+<div class="row classMargin">
+	<button class="btn btn-danger btn-xs pull-right" ng-click="signOut()">Sair</button>
+</div>

@@ -1,0 +1,92 @@
+<div class="row classMargin">
+	<h3>
+		<strong>Transferência</strong>
+	</h3>
+</div>
+<div class="row classMargin">
+	<h4>Conta a debitar</h4>
+	<dl class="dl-horizontal">
+		<dt>Agencia</dt>
+		<dd>{{client.agencia}}</dd>
+		<dt>Conta</dt>
+		<dd>{{client.numero}}</dd>
+		<dt>Cliente</dt>
+		<dd>{{client.nome}}</dd>
+	</dl>
+</div>
+<div class="row classMargin">
+	<form id="idFormTransfer" name="idFormTransfer">
+		<h4>Conta a creditar</h4>
+		<div class="form-group">
+			<label>Agência</label>
+			<input type="text" class="form-control" name="agencia" ng-model="accountCredit.agency" ng-required="true" ui-number="4">
+		</div>
+		<div class="form-group">
+			<label>Conta</label>
+			<input type="text" class="form-control" name="conta" ng-model="accountCredit.number" ng-required="true" ui-number="5">
+		</div>
+		<h4>Valor</h4>
+		<div class="input-group">
+			<div class="input-group-addon">R$</div>
+      		<input type="number" class="form-control" name="conta" ng-model="valueTransfer" ng-required="true">
+      		<div class="input-group-addon">,00</div>
+		</div>
+		<button class="btn btn-primary btn-block classMargin" ng-click="transfer(client, accountCredit, valueTransfer)" ng-disabled="idFormTransfer.$invalid">Transferir</button>
+	</form>
+</div>
+<div class="row classMargin" ng-show="isMessage()">
+	<div class="alert alert-danger">
+		{{message}}
+	</div>
+</div>
+<div class="row classMargin">
+	<a href="javascript:history.back()" class="btn btn-info btn-xs pull-right">Voltar</a>
+</div>
+<div id="modalConfirm" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Confirmação de Transferência</h4>
+			</div>
+			<div class="modal-body">
+				<div class="classModal">
+					<div class="row classMargin">
+						<h4>Conta a debitar</h4>
+						<dl class="dl-horizontal">
+							<dt>Agencia</dt>
+							<dd>{{transferData.dataD.agencia}}</dd>
+							<dt>Conta</dt>
+							<dd>{{transferData.dataD.numero}}</dd>
+							<dt>Cliente</dt>
+							<dd>{{transferData.dataD.nome}}</dd>
+						</dl>
+					</div>
+					<div class="row classMargin">
+						<h4>Conta a creditar</h4>
+						<dl class="dl-horizontal">
+							<dt>Agencia</dt>
+							<dd>{{transferData.dataC.agencia}}</dd>
+							<dt>Conta</dt>
+							<dd>{{transferData.dataC.numero}}</dd>
+							<dt>Cliente</dt>
+							<dd>{{transferData.dataC.nome}}</dd>
+						</dl>
+					</div>
+					<div class="row classMargin">
+						<h4>Valor</h4>
+						<div class="input-group col-xs-10">
+							<div class="input-group-addon">R$</div>
+				      		<input type="text" class="form-control" name="conta" value="{{transferData.v}}" disabled>
+				      		<div class="input-group-addon">,00</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-success" ng-click="transferConfirm()">Transferir</button>
+			</div>
+		</div>
+	</div>
+</div>

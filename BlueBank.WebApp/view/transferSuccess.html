@@ -1,0 +1,46 @@
+<div class="row classMargin">
+	<h3>
+		<strong>Transferência feita com sucesso!</strong>
+	</h3>
+</div>
+
+<div class="row classMargin">
+	<h4>
+		<strong>Comprovante</strong>
+	</h4>
+</div>
+<div class="row classMargin">
+	<div class="row classMargin">
+		<h4>Conta a debitar</h4>
+		<dl class="dl-horizontal">
+			<dt>Agencia</dt>
+			<dd>{{transferData.dataD.agencia}}</dd>
+			<dt>Conta</dt>
+			<dd>{{transferData.dataD.numero}}</dd>
+			<dt>Cliente</dt>
+			<dd>{{transferData.dataD.nome}}</dd>
+		</dl>
+	</div>
+	<div class="row classMargin">
+		<h4>Conta a creditar</h4>
+		<dl class="dl-horizontal">
+			<dt>Agencia</dt>
+			<dd>{{transferData.dataC.agencia}}</dd>
+			<dt>Conta</dt>
+			<dd>{{transferData.dataC.numero}}</dd>
+			<dt>Cliente</dt>
+			<dd>{{transferData.dataC.nome}}</dd>
+		</dl>
+	</div>
+	<div class="row classMargin">
+		<h4>Valor</h4>
+		<div class="input-group col-xs-10">
+			<div class="input-group-addon">R$</div>
+      		<input type="text" class="form-control" name="conta" value="{{transferData.v}}" disabled>
+      		<div class="input-group-addon">,00</div>
+		</div>
+	</div>
+</div>
+<div class="row classMargin">
+	<a href="#/client" class="btn btn-info btn-xs pull-right">Inicio</a>
+</div>
